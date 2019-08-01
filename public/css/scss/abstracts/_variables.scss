@@ -1,0 +1,37 @@
+// COLORS
+$color-white: #ffffff;
+$color-black: #000000;
+$color-font-primary: #000000ff;
+$color-matte-black: #383838;
+$color-white-smoke: #f2f2f2ff;
+$color-prussian-blue: #002a5aff;
+
+$color-primary: #ff6600ff;
+
+$color-secondary: #008080ff;
+
+$color-tertiary: #373e48ff;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey-dark: #999;
+$color-grey-dark-2: #777;
+$color-grey-dark-3: #333;
+
+// FONT
+@font-face {
+  font-family: ubuntu;
+  src: url(../fonts/ubuntu-regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: ubuntu-light;
+  src: url(../fonts/ubuntu-light.ttf);
+}
+
+// $default-font-size: 1.6rem;
+$font-ubuntu: 'ubuntu', 'sans-serif';
+$font-ubuntu-light: 'ubuntu-light', 'sans-serif';
+
+// BOX SHADOWS

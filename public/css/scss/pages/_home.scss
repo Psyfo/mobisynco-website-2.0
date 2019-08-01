@@ -1,0 +1,378 @@
+.about {
+  display: grid;
+  grid-template-columns: 35% auto;
+  grid-column-gap: 2rem;
+  grid-template-rows: 25vh;
+  background-color: $color-white-smoke;
+
+  &__title {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    font-family: $font-ubuntu;
+    color: $color-font-primary;
+    letter-spacing: 0.2rem;
+  }
+
+  &__content {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    padding: 2rem;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &--heading {
+      margin-bottom: 1rem;
+      font-size: 1.9rem;
+      font-family: $font-ubuntu;
+      color: $color-font-primary;
+      letter-spacing: 0.1rem;
+    }
+
+    &--text {
+      font-size: 1.5rem;
+      font-family: $font-ubuntu;
+      color: $color-font-primary;
+      letter-spacing: 0.1rem;
+      line-height: 2;
+    }
+  }
+}
+
+.about-footer {
+  height: 20vh;
+}
+
+.banner-1 {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-prussian-blue, 0.8),
+      rgba($color-prussian-blue, 0.8)
+    ),
+    url(../../../img/background-1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &--text {
+      font-size: 6.5rem;
+      font-family: $font-ubuntu;
+      color: $color-white;
+      letter-spacing: 0.1rem;
+      line-height: 1;
+    }
+    &--icon {
+      width: 7rem;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      transform: translate(40%, 40%);
+    }
+  }
+  &__subtitle {
+    margin: 8rem 0;
+    font-size: 2rem;
+    font-family: $font-ubuntu;
+    color: $color-white;
+    letter-spacing: 0.1rem;
+  }
+  &__link {
+    width: 35rem;
+  }
+}
+
+.section-1 {
+  height: 95vh;
+  padding: 10% 20%;
+  &__panel {
+    height: 100%;
+    width: 100%;
+    background-color: $color-white-smoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 5.5rem;
+    font-family: $font-ubuntu;
+    color: $color-font-primary;
+    letter-spacing: 0.1rem;
+    line-height: 1;
+  }
+  &__subtitle {
+    font-size: 2rem;
+    font-family: $font-ubuntu;
+    color: $color-font-primary;
+    letter-spacing: 0.1rem;
+    line-height: 1;
+  }
+  &__services {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &--item {
+      flex-grow: 1;
+      width: 40%;
+      font-size: 1.8rem;
+      letter-spacing: 0.1rem;
+      line-height: 2;
+      font-family: $font-ubuntu;
+      color: $color-font-primary;
+    }
+  }
+  &__link {
+    width: 35rem;
+  }
+}
+
+.section-2 {
+  height: 95vh;
+  display: grid;
+  grid-template-columns: 20% auto 20%;
+  grid-template-rows: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  background-color: $color-tertiary;
+
+  &__title {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    font-family: $font-ubuntu;
+    color: $color-white;
+    letter-spacing: 0.1rem;
+    line-height: 1;
+  }
+  &__subtitle {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    font-size: 2.5rem;
+    font-family: $font-ubuntu;
+    color: $color-white;
+    letter-spacing: 0.1rem;
+    line-height: 2;
+  }
+  &__research {
+    grid-column: 1/-1;
+    grid-row: 3/4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__research-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &--icon {
+      height: 8rem;
+    }
+    &--text {
+      margin-top: 2rem;
+      font-size: 2rem;
+      font-family: $font-ubuntu;
+      color: $color-white;
+      letter-spacing: 0.1rem;
+      line-height: 3;
+    }
+  }
+  &__link {
+    grid-column: 2/3;
+    grid-row: 4/-1;
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    width: 35rem;
+  }
+}
+
+.section-3 {
+  height: 200vh;
+  display: grid;
+  grid-template-columns: 15% 30% 5% 30% 15%;
+  grid-template-rows: 10% auto 20%;
+
+  &__card-1 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr 2fr 1fr;
+
+    &--image {
+      width: 100%;
+      height: 60rem;
+      background-image: url(../../../img/manufacturing.svg);
+      background-size: 100% auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      justify-self: center;
+      align-self: center;
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+
+    &--title {
+      margin: 2rem 0;
+      justify-self: center;
+      align-self: center;
+      grid-column: 1/2;
+      grid-row: 2/3;
+      font-size: 3.5rem;
+      font-family: $font-ubuntu;
+      color: $color-font-primary;
+      letter-spacing: 0.1rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+    &--text {
+      justify-self: stretch;
+      align-self: center;
+      grid-row: 3/4;
+      padding: 1rem 5rem;
+      font-size: 1.7rem;
+      font-family: $font-ubuntu;
+      color: $color-font-primary;
+      letter-spacing: 0.1rem;
+      line-height: 2;
+    }
+    &--link {
+      margin: 2rem 0;
+      justify-self: center;
+      align-self: center;
+      grid-row: 4/5;
+      width: 35rem;
+    }
+  }
+  &__card-2 {
+    transform: translateY(20%);
+    background-color: $color-tertiary;
+    grid-column: 4/5;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr 2fr 1fr;
+
+    &--image {
+      width: 100%;
+      height: 35rem;
+      background-image: url(../../../img/global.svg);
+      background-size: 100% auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      justify-self: center;
+      align-self: center;
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+
+    &--title {
+      justify-self: center;
+      align-self: center;
+      grid-column: 1/2;
+      grid-row: 2/3;
+      font-size: 4rem;
+      font-family: $font-ubuntu;
+      color: $color-white;
+      letter-spacing: 0.1rem;
+      line-height: 2;
+    }
+    &--text {
+      height: 100%;
+      justify-self: center;
+      align-self: center;
+      grid-column: 1/2;
+      grid-row: 3/4;
+      padding: 0 5rem;
+      font-size: 1.7rem;
+      font-family: $font-ubuntu;
+      color: $color-white;
+      letter-spacing: 0.1rem;
+      line-height: 2;
+    }
+    &--text > p {
+      line-height: 2;
+    }
+    &--link {
+      margin: 1rem 0;
+      justify-self: center;
+      align-self: center;
+      grid-column: 1/2;
+      grid-row: 4/5;
+      width: 35rem;
+    }
+  }
+}
+
+.section-4 {
+  height: 60vh;
+  background-color: $color-secondary;
+  display: grid;
+  grid-template-columns: 20% auto 20%;
+  grid-template-rows: 1fr 2fr 1fr;
+
+  &__title {
+    justify-self: center;
+    align-self: center;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    font-size: 6rem;
+    font-family: $font-ubuntu;
+    color: $color-white;
+    letter-spacing: 0.1rem;
+    line-height: 3;
+  }
+  &__text {
+    padding: 0 16rem;
+    justify-self: center;
+    align-self: center;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    font-size: 2.5rem;
+    font-family: $font-ubuntu;
+    color: $color-white;
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+  }
+  &__link {
+    justify-self: center;
+    align-self: center;
+    grid-column: 2/3;
+    grid-row: 3/4;
+    width: 35rem;
+  }
+}

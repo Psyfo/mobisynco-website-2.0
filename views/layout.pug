@@ -1,0 +1,32 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        title= title
+        
+
+        script(src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js")
+        link(type="text/css", href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.7/dist/semantic.min.css", rel="stylesheet")
+        script(src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.7/dist/semantic.min.js")
+        
+        //- Custom script
+        script(src="/js/scripts.js")
+        //- Custom stylesheet
+        link(href='/css/styles.css', rel='stylesheet')
+
+
+
+    
+
+    
+    body
+        include partials/header.pug
+
+        block content
+
+        
+        include partials/footer.pug

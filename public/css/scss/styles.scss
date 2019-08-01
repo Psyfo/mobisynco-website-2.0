@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+// ABSTRACTS
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
+@import 'abstracts/variables';
+
+// BASE
+@import 'base/animations';
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/utilities';
+
+// COMPONENTS
+@import 'components/banner';
+@import 'components/buttons';
+
+// LAYOUT
+@import 'layout/footer';
+@import 'layout/forms';
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/sidebar';
+
+// PAGES
+@import 'pages/home';
+@import 'pages/about';
+
+// THEMES
+@import 'themes/admin';
+@import 'themes/theme';
+
+// VENDORS

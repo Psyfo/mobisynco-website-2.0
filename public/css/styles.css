@@ -1,0 +1,546 @@
+/* You can add global styles to this file, and also import other style files */
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
+@font-face {
+  font-family: ubuntu;
+  src: url(../fonts/ubuntu-regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: ubuntu-light;
+  src: url(../fonts/ubuntu-light.ttf);
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+.angle.right.icon.orange {
+  color: #ff6600ff;
+}
+
+.fluid.massive.ui.button.large-text {
+  font-size: 2.5rem !important;
+  font-family: "ubuntu", "sans-serif" !important;
+  letter-spacing: 0.1rem;
+}
+
+.fluid.massive.ui.button.large-text.bordered {
+  font-size: 2.5rem !important;
+  font-family: "ubuntu", "sans-serif" !important;
+  letter-spacing: 0.1rem;
+  border: solid black 2px;
+}
+
+.navigation {
+  display: grid;
+  grid-template-columns: 35% auto;
+  grid-column-gap: 2rem;
+  grid-template-rows: 20vh;
+  align-items: center;
+  transition: all 300ms linear;
+}
+@media only screen and (max-width: 56.25em) {
+  .navigation {
+    grid-template-columns: 1fr;
+    grid-template-rows: 15vh 5vh;
+  }
+}
+
+.brand {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.brand__image {
+  height: auto;
+  width: 70%;
+}
+@media only screen and (max-width: 37.5em) {
+  .brand__image {
+    width: 50%;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .brand__image {
+    width: 45%;
+  }
+}
+.nav {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+@media only screen and (max-width: 56.25em) {
+  .nav {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
+.nav-item {
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  backface-visibility: hidden;
+  transition: all 300ms ease-in-out;
+}
+.nav-item::after {
+  height: 0.2rem;
+  background-color: #ff6600ff;
+  content: "";
+  transform: translateY(1.5rem) scaleX(0.000001);
+}
+.nav-item:hover, .nav-item:active {
+  transform: scale(1.1);
+}
+.nav-item:hover::after, .nav-item:active::after {
+  width: 100%;
+  content: "";
+  transform: translateY(1.5rem) scaleX(1);
+  transition: all 300ms ease-in-out;
+}
+
+.nav-link:link, .nav-link:visited {
+  text-decoration: none;
+  font-family: "ubuntu", "sans-serif";
+  color: #000000ff;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 35% auto;
+  grid-column-gap: 2rem;
+  grid-template-rows: 25vh;
+  background-color: #f2f2f2ff;
+}
+.about__title {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #000000ff;
+  letter-spacing: 0.2rem;
+}
+.about__content {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.about__item {
+  padding: 2rem;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.about__item--heading {
+  margin-bottom: 1rem;
+  font-size: 1.9rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #000000ff;
+  letter-spacing: 0.1rem;
+}
+.about__item--text {
+  font-size: 1.5rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #000000ff;
+  letter-spacing: 0.1rem;
+  line-height: 2;
+}
+
+.about-footer {
+  height: 20vh;
+}
+
+.banner-1 {
+  background-image: linear-gradient(to right bottom, rgba(0, 42, 90, 0.8), rgba(0, 42, 90, 0.8)), url(../../../img/background-1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.banner-1__title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner-1__title--text {
+  font-size: 6.5rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+  line-height: 1;
+}
+.banner-1__title--icon {
+  width: 7rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(40%, 40%);
+}
+.banner-1__subtitle {
+  margin: 8rem 0;
+  font-size: 2rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+}
+.banner-1__link {
+  width: 35rem;
+}
+
+.section-1 {
+  height: 95vh;
+  padding: 10% 20%;
+}
+.section-1__panel {
+  height: 100%;
+  width: 100%;
+  background-color: #f2f2f2ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.section-1__title {
+  font-size: 5.5rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #000000ff;
+  letter-spacing: 0.1rem;
+  line-height: 1;
+}
+.section-1__subtitle {
+  font-size: 2rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #000000ff;
+  letter-spacing: 0.1rem;
+  line-height: 1;
+}
+.section-1__services {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.section-1__services--item {
+  flex-grow: 1;
+  width: 40%;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  line-height: 2;
+  font-family: "ubuntu", "sans-serif";
+  color: #000000ff;
+}
+.section-1__link {
+  width: 35rem;
+}
+
+.section-2 {
+  height: 95vh;
+  display: grid;
+  grid-template-columns: 20% auto 20%;
+  grid-template-rows: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  background-color: #373e48ff;
+}
+.section-2__title {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+  line-height: 1;
+}
+.section-2__subtitle {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  font-size: 2.5rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+  line-height: 2;
+}
+.section-2__research {
+  grid-column: 1/-1;
+  grid-row: 3/4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-around;
+  align-items: center;
+}
+.section-2__research-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-2__research-item--icon {
+  height: 8rem;
+}
+.section-2__research-item--text {
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+  line-height: 3;
+}
+.section-2__link {
+  grid-column: 2/3;
+  grid-row: 4/-1;
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  width: 35rem;
+}
+
+.section-3 {
+  height: 200vh;
+  display: grid;
+  grid-template-columns: 15% 30% 5% 30% 15%;
+  grid-template-rows: 10% auto 20%;
+}
+.section-3__card-1 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content 1fr 2fr 1fr;
+}
+.section-3__card-1--image {
+  width: 100%;
+  height: 60rem;
+  background-image: url(../../../img/manufacturing.svg);
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-self: center;
+  align-self: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.section-3__card-1--title {
+  margin: 2rem 0;
+  justify-self: center;
+  align-self: center;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  font-size: 3.5rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #000000ff;
+  letter-spacing: 0.1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+.section-3__card-1--text {
+  justify-self: stretch;
+  align-self: center;
+  grid-row: 3/4;
+  padding: 1rem 5rem;
+  font-size: 1.7rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #000000ff;
+  letter-spacing: 0.1rem;
+  line-height: 2;
+}
+.section-3__card-1--link {
+  margin: 2rem 0;
+  justify-self: center;
+  align-self: center;
+  grid-row: 4/5;
+  width: 35rem;
+}
+.section-3__card-2 {
+  transform: translateY(20%);
+  background-color: #373e48ff;
+  grid-column: 4/5;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content 1fr 2fr 1fr;
+}
+.section-3__card-2--image {
+  width: 100%;
+  height: 35rem;
+  background-image: url(../../../img/global.svg);
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-self: center;
+  align-self: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.section-3__card-2--title {
+  justify-self: center;
+  align-self: center;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  font-size: 4rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+  line-height: 2;
+}
+.section-3__card-2--text {
+  height: 100%;
+  justify-self: center;
+  align-self: center;
+  grid-column: 1/2;
+  grid-row: 3/4;
+  padding: 0 5rem;
+  font-size: 1.7rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+  line-height: 2;
+}
+.section-3__card-2--text > p {
+  line-height: 2;
+}
+.section-3__card-2--link {
+  margin: 1rem 0;
+  justify-self: center;
+  align-self: center;
+  grid-column: 1/2;
+  grid-row: 4/5;
+  width: 35rem;
+}
+
+.section-4 {
+  height: 60vh;
+  background-color: #008080ff;
+  display: grid;
+  grid-template-columns: 20% auto 20%;
+  grid-template-rows: 1fr 2fr 1fr;
+}
+.section-4__title {
+  justify-self: center;
+  align-self: center;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  font-size: 6rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+  line-height: 3;
+}
+.section-4__text {
+  padding: 0 16rem;
+  justify-self: center;
+  align-self: center;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  font-size: 2.5rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+  line-height: 1.5;
+}
+.section-4__link {
+  justify-self: center;
+  align-self: center;
+  grid-column: 2/3;
+  grid-row: 3/4;
+  width: 35rem;
+}
+
+/*# sourceMappingURL=styles.css.map */
