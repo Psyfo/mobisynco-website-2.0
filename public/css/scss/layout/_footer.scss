@@ -1,0 +1,48 @@
+.footer {
+  height: 100vh;
+  background-color: $color-tertiary;
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  grid-template-rows: 10% 1fr 20%;
+
+  &__content {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 2rem;
+    grid-auto-rows: 1fr;
+    padding: 1rem 2rem;
+  }
+  &__item {
+    grid-column: auto;
+    grid-row: auto;
+    &--title {
+      font-size: 3rem;
+      font-family: $font-ubuntu;
+      color: $color-white;
+      letter-spacing: 0.1rem;
+      line-height: 2;
+    }
+    &--list {
+      list-style: none;
+
+      & > li {
+        font-size: 2rem;
+        font-family: $font-ubuntu;
+        color: $color-white;
+        letter-spacing: 0.1rem;
+        line-height: 2;
+      }
+    }
+  }
+  &__brand {
+    justify-self: center;
+    align-self: center;
+    grid-column: 2/3;
+    grid-row: 3/4;
+
+    &--logo {
+    }
+  }
+}

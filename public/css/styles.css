@@ -102,6 +102,49 @@ html {
   border: solid black 2px;
 }
 
+.footer {
+  height: 100vh;
+  background-color: #373e48ff;
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  grid-template-rows: 10% 1fr 20%;
+}
+.footer__content {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 2rem;
+  grid-auto-rows: 1fr;
+  padding: 1rem 2rem;
+}
+.footer__item {
+  grid-column: auto;
+  grid-row: auto;
+}
+.footer__item--title {
+  font-size: 3rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+  line-height: 2;
+}
+.footer__item--list {
+  list-style: none;
+}
+.footer__item--list > li {
+  font-size: 2rem;
+  font-family: "ubuntu", "sans-serif";
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+  line-height: 2;
+}
+.footer__brand {
+  justify-self: center;
+  align-self: center;
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
 .navigation {
   display: grid;
   grid-template-columns: 35% auto;
@@ -124,18 +167,18 @@ html {
   justify-content: center;
   align-items: center;
 }
-.brand__image {
+.brand__logo {
   height: auto;
   width: 70%;
 }
 @media only screen and (max-width: 37.5em) {
-  .brand__image {
+  .brand__logo {
     width: 50%;
     height: auto;
   }
 }
 @media only screen and (max-width: 56.25em) {
-  .brand__image {
+  .brand__logo {
     width: 45%;
   }
 }
